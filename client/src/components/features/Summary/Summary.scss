@@ -61,3 +61,9 @@
     font-size: $base-size*3;
   }
 }
+
+@media (max-width: 768px) {
+  .tableHead {
+    font-size: $base-size*2;
+  }
+}

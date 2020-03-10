@@ -13,3 +13,10 @@
   margin: 10px;
   padding: 20px 10px;
 }
+
+@media (max-width: 768px) {
+  .navLink {
+    margin: 4px;
+    padding: 16px 4px;
+  }
+}
