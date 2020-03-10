@@ -15,12 +15,12 @@ class ProductCartCounter extends React.Component {
     return(
       <div className='productCartCounter'>
         <div className='btnQuantity'>
-          <button>-</button>
-            <div>{products.quantity}</div>
-          <button>+</button>
+          <button className='btnMinus'>-</button>
+            <div className='quantityProduct'>{products.quantity}</div>
+          <button className='btnPlus'>+</button>
         </div>
 
-        <button onClick={this.deleteProduct}>delete</button>
+        <button className='btnDelete' onClick={this.deleteProduct}>delete</button>
       </div>
     );
   };

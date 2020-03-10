@@ -2,12 +2,41 @@
 
 .productCartCounter {
   display: flex;
-  flex-direction: column;
-
-  border: 1px solid black;
-
+	flex-direction: column;
+	align-items: center;
+  button {
+		border: none;
+    background: inherit;
+    cursor: pointer;
+  }
   .btnQuantity {
     display: flex;
-
+		flex-direction: row; 
+    justify-content: center;
+    
+		align-items: center;
+    margin-top: 0.9rem;
+    
+    button {
+			margin: 0 10px;
+			width: 35px;
+      height: 35px;
+      
+    }
+    
+    .quantityProduct {
+      border-radius: 10px;
+      display: flex;
+			justify-content: center;
+			align-items: center;
+			min-width: 35px;
+			min-height: 35px;
+			background: lightgray;
+    }
   }
+  
+  .btnDelete {
+    padding: 10px 0;
+  }
+  
 }

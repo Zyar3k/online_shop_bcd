@@ -10,7 +10,7 @@ class Cart extends React.Component {
   deleteProduct = (id) => {
     const {deleteProduct, calculatePrice} = this.props;
     deleteProduct(id);
-    // calculatePrice();
+    calculatePrice();
   };
 
 
@@ -21,7 +21,7 @@ class Cart extends React.Component {
     return(
       <div>
         <div>
-          <MainTitle>Your cart</MainTitle>
+          <MainTitle>cart</MainTitle>
             {cart.length !== 0 ? cart.map(idx =>
           <CartProduct 
 
