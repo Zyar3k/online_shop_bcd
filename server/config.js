@@ -1,4 +1,4 @@
 module.exports = {
   PORT: 8000,
-  //DB:
+  DB: 'mongodb://localhost:27017/CraftShopDB'
 };

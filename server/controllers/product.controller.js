@@ -1,4 +1,10 @@
-exports.getAllProducts = function (req,res) {
+const Product = require('../models/product.model');
 
-  res.json(console.log('=> api products'));
-};
+exports.getAllProducts = async (req, res) => {
+  
+  try {
+    res.status(200).json(await Product.find());
+  } catch (error) {
+    res.status(500).json(error);
+  }
+}; 
