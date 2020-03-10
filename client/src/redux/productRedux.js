@@ -10,6 +10,9 @@ const createActionName = name => `app/${reducerName}/${name}`;
 export const getProducts = ({ products }) => products.data;
 export const getProduct = ({ products }) => products.product;
 
+/* amount of products */
+export const getAmountOfProducts = ({ products }) => products.data.length;
+
 /* request */
 export const getRequest = ({ products }) => products.request;
 
