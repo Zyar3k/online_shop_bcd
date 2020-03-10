@@ -1,19 +1,29 @@
 @import '../../../styles/settings.scss';
 
-.cartProduct .cartProdContent {
+
+.cartProduct {
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
   background: grey;
 }
 
+.cartProduct .cartProdContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .cartProduct .cartProdText {
-  width: 50%;
+
 }
 
 .cartProduct .cartProdPrice {
-  width: 10%;
+
 }
 
-.cartProduct img {
+.cartProduct {
+  img {
   height: 200px;
+  }
 } 

@@ -13,20 +13,16 @@ class Cart extends React.Component {
 
     return(
       <div>
-        <div className='cartProduct'>
+        <div>
           <MainTitle>Your cart</MainTitle>
             {cart.length !== 0 ? cart.map(idx =>
-          <CartProduct products={idx} />) : <PendingInfo />}
+          <CartProduct key='' products={idx} />) : <PendingInfo />}
 
-          <div>
-            <button>+</button>
-            <button>del</button>
-            <button>-</button>
-          </div>
+          
         </div>
         <div>
           <h4>Summary</h4>
-          <div>{price}</div>
+        <div>Total Price: {price}  £</div>
           <button>buy</button>
         </div>
       </div>

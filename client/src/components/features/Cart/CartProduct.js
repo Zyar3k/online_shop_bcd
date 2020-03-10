@@ -1,6 +1,7 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import './Cart.scss';
+import ProductCartCounter from '../../common/ProductCartCounter/ProductCartCounter';
 
 
 const CartProduct = (props) => {
@@ -28,6 +29,9 @@ const CartProduct = (props) => {
           {products.price}  £
         </div>
       </div>
+      <div className='productCartCounter'>
+            <ProductCartCounter products={products} />
+          </div>
     </div>
   );
 };
