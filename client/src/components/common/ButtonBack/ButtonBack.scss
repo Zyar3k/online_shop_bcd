@@ -1,7 +1,10 @@
 @import '../../../styles/settings.scss';
 
-.buttonNext {
+.buttonBack {
   margin: 0;
+  padding: 10px 20px;
+  max-width: 110px;
+  max-height: 55px;
   font-size: $base-size*2;
   background: $font-color-hover;
   border: 2px solid $font-color-hover;

@@ -1,0 +1,9 @@
+@import '../../../styles/settings.scss';
+
+.pendingInfo {
+  background: $font-color-hover;
+  padding: 10px;
+  text-align: center;
+  font-size: $base-size*2.5;
+  border-radius: $radius;
+}

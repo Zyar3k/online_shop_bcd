@@ -50,7 +50,7 @@ class Cart extends React.Component {
               removeProduct={this.removeProduct}
             />) 
             : 
-            <PendingInfo />}
+            <PendingInfo>Your shopping cart is empty!</PendingInfo>}
           </div>
           <div className='summaryWrapper'>
             <div className='totalPrice'>Total Price: {price}£</div>

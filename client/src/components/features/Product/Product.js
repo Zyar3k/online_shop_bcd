@@ -57,9 +57,9 @@ class Product extends React.Component {
     } else if(request.pending === true || request.success === null) {
       return <Loader />
     } else if(request.pending === false && request.error !== null) {
-      return <PendingInfo />
+      return <PendingInfo>{request.error}</PendingInfo>
     } else if(request.pending === false && request.success === true && products.length === 0) {
-      return <PendingInfo />
+      return <PendingInfo>no products available</PendingInfo>
     }
   };
 };

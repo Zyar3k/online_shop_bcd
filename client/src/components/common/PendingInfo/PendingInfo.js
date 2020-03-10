@@ -1,19 +1,15 @@
 import React from 'react';
-
+import './PendingInfo.scss'
 
 // to do!! cart, products, product
 
+const PendingInfo = ({...otherProps}) => {
 
-class PendingInfo extends React.Component {
-
-  render(){
-
-    return(
-        <div>
-          PendingInfo
-        </div>
-    );
-  };
+  return(
+    <div {...otherProps} className='pendingInfo' >
+    
+    </div>
+  );
 };
 
 export default PendingInfo;

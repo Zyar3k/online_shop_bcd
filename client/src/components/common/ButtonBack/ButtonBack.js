@@ -6,7 +6,7 @@ class ButtonBack extends React.Component {
   render() {
 
     return(
-      <span className='buttonNext' onClick={this.props.history.goBack}>
+      <span className='buttonBack' onClick={this.props.history.goBack}>
         back
       </span>
     );
