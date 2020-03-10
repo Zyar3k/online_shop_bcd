@@ -1,0 +1,68 @@
+@import '../../../styles/settings.scss';
+
+.tableSummary {
+  // background: grey;
+  font-size: $base-size*1.5
+}
+
+.tableHead {
+  font-size: $base-size*2;
+  padding: 10px 0;
+  background: rgb(183, 193, 194);
+}
+
+.tableBody {
+  padding: 6px 0;
+  border: 1px solid rgb(183, 193, 194);
+  border-top: none;
+}
+
+.tableHead, .tableBody {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .name {
+    width: 55%;
+    padding-left: 20px;
+  }
+
+  .number {
+    width: 15%;
+    text-align: center;
+  }
+
+  .totalPrice {
+    font-weight: bold;
+  }  
+}
+
+.payOrderWrapper {
+  margin-top: 20px;
+  padding: 20px;
+  width: 300px;
+  float: right;
+  border: 1px solid rgb(183, 193, 194);
+  text-align: center;
+
+  .payOrderTitle {
+    // background: grey;
+    font-size: $base-size*1.6;
+  }
+
+  .grandTotal {
+    padding: 20px;
+    font-size: $base-size*3;
+  }
+
+  .buttonOrder {
+    margin-top: 20px;
+    padding: 10px;
+    transition: ease 0.5s;
+    cursor: pointer;
+    background: rgb(183, 193, 194);
+    &:hover {
+      background: green;
+    }
+  }
+}

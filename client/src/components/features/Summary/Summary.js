@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 import Loader from '../../common/Loader/Loader';
+import MainTitle from '../../common/MainTitle/MainTitle';
+import './Summary.scss';
 
 const Summary = (props) => {
 
@@ -9,38 +11,75 @@ const Summary = (props) => {
 
   // if (request.success === true && request.pending === false && cart.length > 0) {
     return(
-      <div className="scroll-wrapper">
-      <div>
-        <thead>
-          <tr>
-            <th>name</th>
-            <th>price</th>
-            <th>quantity</th>
-            <th>total price</th>
-          </tr>
-        </thead>
-        <tbody>
+      <div className="summary">
+        <MainTitle>Summary</MainTitle>
+        <div className='tableSummary'>          
+          <div className='tableHead'>
+            <div className='name'>name</div>
+            <div className='price number'>price</div>
+            <div className='quantity number'>quantity</div>
+            <div className='number'>total</div>
+          </div>
           {/* {cart.map(idx => */}
-          <tr key='1'>            
-              {/* <td>{ idx.name }</td> */}
-              <td>Handmade Card For Mum</td>
-              {/* <td>{ idx.price }£</td> */}
-              <td>4£</td>
-              {/* <td>{idx.quantity}</td> */}
-              <td>3</td>
-              {/* <td>{(idx.price * idx.quantity).toFixed(2)}£</td> */}
-              <td>12£</td>
-            </tr>
-          {/* )} */}
-        </tbody>
-      </div>
-      <div>
-      grand total 12 £
-      {/* {price}£ */}
-      </div>
-      <Link to={'/'}>
-            <div>order & pay</div>
+          <div className='tableBody' key='1'>            
+              {/* <div className='name'>{ idx.name }</div>
+              <div className='price number'>{ idx.price }£</div>
+              <div className='quantity number'>{idx.quantity}</div>
+              <div className='totalPrice number'>{(idx.price * idx.quantity).toFixed(2)}£</div> */}
+              <div className='name'>Lorem ipsum dolor sit amet</div>
+              <div className='price number'>5£</div>
+              <div className='quantity number'>15</div>
+              <div className='totalPrice number'>75£</div>
+            </div>
+          {/* )} */} 
+
+
+          <div className='tableBody' key='1'>            
+              {/* <div className='name'>{ idx.name }</div>
+              <div className='price number'>{ idx.price }£</div>
+              <div className='quantity number'>{idx.quantity}</div>
+              <div className='totalPrice number'>{(idx.price * idx.quantity).toFixed(2)}£</div> */}
+              <div className='name'>Lorem ipsum dolor sit amet</div>
+              <div className='price number'>5£</div>
+              <div className='quantity number'>15</div>
+              <div className='totalPrice number'>75£</div>
+            </div>
+
+            <div className='tableBody' key='1'>            
+              {/* <div className='name'>{ idx.name }</div>
+              <div className='price number'>{ idx.price }£</div>
+              <div className='quantity number'>{idx.quantity}</div>
+              <div className='totalPrice number'>{(idx.price * idx.quantity).toFixed(2)}£</div> */}
+              <div className='name'>Lorem ipsum dolor sit amet</div>
+              <div className='price number'>5£</div>
+              <div className='quantity number'>15</div>
+              <div className='totalPrice number'>75£</div>
+            </div>
+
+            <div className='tableBody' key='1'>            
+              {/* <div className='name'>{ idx.name }</div>
+              <div className='price number'>{ idx.price }£</div>
+              <div className='quantity number'>{idx.quantity}</div>
+              <div className='totalPrice number'>{(idx.price * idx.quantity).toFixed(2)}£</div> */}
+              <div className='name'>Lorem ipsum dolor sit amet</div>
+              <div className='price number'>5£</div>
+              <div className='quantity number'>15</div>
+              <div className='totalPrice number'>75£</div>
+            </div>
+         
+        </div>
+        <div className='payOrderWrapper'>
+          <div className='payOrder'>
+            <div className='payOrderTitle'>grand total</div>
+            <div className='grandTotal'>75$</div>
+          {/* {price}£ */}
+          </div>
+          <Link to={'/'}>
+            <div className='buttonOrder'>order & pay</div>
           </Link>
+        </div>
+
+      
     </div>
     );
   // } else if(request.pending === true || request.success === null) {
