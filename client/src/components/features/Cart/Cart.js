@@ -49,7 +49,7 @@ class Cart extends React.Component {
             <div>Total Price: {price}£</div>
           {cart.length !== 0 ?
             <Link to={'summarycart'}>
-              <button>buy</button>
+              <div className='toSummary'>buy</div>
             </Link> :
             <div className='toSummary' color="info" disabled>Summary</div>}
           </div>
