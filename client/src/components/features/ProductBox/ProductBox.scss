@@ -3,7 +3,7 @@
 .productBox {
   margin: 20px;
   max-width: 35%;
-  color: #929D9E;
+  color: $background-color;
   text-align: center;
   background: rgb(183, 193, 194);
   border: 1px solid $font-color-hover;
@@ -48,7 +48,7 @@
 .productBox .productPrice {
   color: white;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 22px;
 }
 
 

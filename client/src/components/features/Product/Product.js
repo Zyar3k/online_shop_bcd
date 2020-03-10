@@ -3,6 +3,8 @@ import { PropTypes } from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import PendingInfo from '../../common/PendingInfo/PendingInfo';
 import Loader from '../../common/Loader/Loader';
+import './Product.scss';
+import MainTitle from '../../common/MainTitle/MainTitle';
 
 class Product extends React.Component {
 
@@ -16,23 +18,25 @@ class Product extends React.Component {
 
     if (request.success === true && request.pending === false && products.length > 0) {
       return (
-        <div className='product'>
-          <div>
-            <div>
-              name:{products[0].name}
+        <div className='productWrapper'>
+          <div className='imgWrapper'>
+            <img src={products[0].img} alt="img" />
+          </div>
+
+          <div className='productContent'>
+            <MainTitle>{products[0].name}</MainTitle>            
+            <div className='productDescription'>
+              {products[0].description}
             </div>
-            <div>
-              price:
+            <div className='productAction'>
+              <div className='productPrice'>
+                {products[0].price}  £
+              </div>
+              <div className='button'>
+                Buy it!
+              </div>
             </div>
-            <div>
-              description:
-            </div>
-            <div>
-              <img src={products[0].img} alt="img" />
-            </div>
-            <button>
-              Buy it!
-            </button>
+            
           </div>
         </div>
       );

@@ -11,4 +11,7 @@
 .link {
   margin: 10px;
   padding: 20px;
+  &:hover {  
+    color: $font-color-hover;
+  }
 }
