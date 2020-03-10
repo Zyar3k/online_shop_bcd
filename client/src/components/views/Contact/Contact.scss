@@ -1,1 +1,32 @@
 @import '../../../styles/settings.scss';
+
+.contactPage {
+  display: flex;
+  justify-content: center;
+}
+
+.contactContent {
+  margin: 0 auto;
+  font-size: 24px;
+
+  div {
+    padding: 12px 0;
+  }
+
+  .socialMedia {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    a {
+      font-size: 38px;
+      padding: 0 20px;
+    }
+  }
+}
+
+@media(max-width: 450px){
+  .contactContent {
+    font-size: 17px;
+  }
+}

@@ -1,0 +1,15 @@
+@import '../../../styles/settings.scss';
+
+.orderPage {
+
+  h3{
+    margin-top: $base-size*5;
+    text-align: center;
+  }
+
+  .contShopping {
+    margin-top: $base-size*5;
+    display: flex;
+    justify-content: center;
+  }
+}

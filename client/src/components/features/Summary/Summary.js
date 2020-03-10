@@ -35,7 +35,7 @@ const Summary = (props) => {
             <div className='payOrderTitle'>grand total</div>
             <div className='grandTotal'> {price}£</div>         
           </div>
-            <Link to={'/'}>
+            <Link to={'/order'}>
               <ButtonNext>
                 order & pay
               </ButtonNext>

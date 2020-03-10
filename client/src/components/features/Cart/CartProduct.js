@@ -15,17 +15,19 @@ const CartProduct = (props) => {
           <div className='cartProdImg'>
             <img src={products.img} alt='img' />
           </div>
-          <div className='cartProdText'>
-            <div className='cartProdName'>
-            {products.name}
+          <span className='activeContent'>
+            <div className='cartProdText'>
+              <div className='cartProdName'>
+              {products.name}
+              </div>
+              <div className='cartProdDescr'>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </div>
             </div>
-            <div className='cartProdDescr'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            <div className='cartProdPrice'>
+            {products.price}£
             </div>
-          </div>
-          <div className='cartProdPrice'>
-          {products.price}£
-          </div>
+          </span>
         </div>
       </Link>
       <div className='productCartCounter'>

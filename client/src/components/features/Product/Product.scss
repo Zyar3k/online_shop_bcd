@@ -1,7 +1,6 @@
 @import '../../../styles/settings.scss';
 
 .product {
-
   background: $background-color-second;
   border-radius: $radius;
   padding: 10px 0;
@@ -36,6 +35,7 @@
   justify-content: space-around;
   align-items: center;
 }
+
 .productDescription {
   text-align: justify;
 }
@@ -62,4 +62,29 @@
   .productWrapper {
     margin-top: 30px;
   }
-} 
+}
+
+@media (max-width: 767px) {
+  .productWrapper {    
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .productContent {
+    font-size: 12px;
+    width: 100%;
+    padding-right: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .productPrice {
+    font-size: 20px;
+  }
+
+  .imgWrapper {
+    width: 100%;
+  }
+}

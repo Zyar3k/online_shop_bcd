@@ -6,6 +6,7 @@ import ProductExtension from './components/views/ProductExtension/ProductExtensi
 import Contact from './components/views/Contact/Contact';
 import CartPage from './components/views/CartPage/CartPage';
 import SummaryPage from './components/views/SummaryPage/SummaryPage';
+import Order from './components/views/Order/Order';
 import NotFound from './components/views/NotFound/NotFound';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path='/contact' component={Contact} />
         <Route path='/cart' component={CartPage} />
         <Route path='/summarycart' component={SummaryPage} />
+        <Route path='/order' component={Order} />
         <Route component={NotFound} />
       </Switch>
     </MainLayout>
