@@ -16,6 +16,8 @@ export const getAmountOfProducts = ({ products }) => products.data.length;
 /* request */
 export const getRequest = ({ products }) => products.request;
 
+/* cart */
+export const getCart = ({ products }) => products.cart;
 
 
 /**********************************************************************/
@@ -27,6 +29,10 @@ export const LOAD_PRODUCT = createActionName('LOAD_PRODUCT');
 const START_REQUEST = createActionName('START_REQUEST');
 const END_REQUEST = createActionName('END_REQUEST');
 const ERROR_REQUEST = createActionName('ERROR_REQUEST');
+
+/* cart */
+export const ADD_PRODUCT_CART = createActionName('ADD_PRODUCT_CART');
+export const PLUS_PRODUCT_CART = createActionName('PLUS_PRODUCT_CART');
 
 
 
@@ -40,6 +46,10 @@ export const startRequest = () => ({ type: START_REQUEST });
 export const endRequest = () => ({ type: END_REQUEST });
 export const errorRequest = error => ({ error, type: ERROR_REQUEST });
 
+/* cart */
+export const addProductCart = payload => ({ payload, type: ADD_PRODUCT_CART });
+export const plusProductCart = id => ({id, type: PLUS_PRODUCT_CART})
+
 
 
 /**********************************************************************/
@@ -51,6 +61,7 @@ const initialState = {
     success: null,
   },
   product: [],
+  cart: [],
 };
 
 
@@ -105,6 +116,19 @@ export default function reducer(statePart = initialState, action = {}) {
       return { ...statePart, request: { pending: false, error: null, success: true } };
     case ERROR_REQUEST:
       return { ...statePart, request: { pending: false, error: action.error, success: false } };
+
+    /* cart */
+    case ADD_PRODUCT_CART:
+      const productAdded = action.payload;
+      productAdded.quantity += 1;
+      return {
+        ...statePart, cart: statePart.cart.concat(productAdded), orderState: false
+      };
+    case PLUS_PRODUCT_CART:
+      const prodCartAdd = statePart.cart.find(idx => idx.id === action.id);
+      prodCartAdd.quantity +=1;
+      const plusProdCart = statePart.cart.map(idx => idx.id === action.id ? prodCartAdd : idx);
+      return { ...statePart, cart: plusProdCart};
 
     default:
       return statePart;

@@ -1,1 +1,19 @@
 @import '../../../styles/settings.scss';
+
+.cartProduct .cartProdContent {
+  display: flex;
+  flex-direction: row;
+  background: grey;
+}
+
+.cartProduct .cartProdText {
+  width: 50%;
+}
+
+.cartProduct .cartProdPrice {
+  width: 10%;
+}
+
+.cartProduct img {
+  height: 200px;
+} 

@@ -13,6 +13,14 @@ class Product extends React.Component {
     loadProducts(match.params.id);
   };
 
+  addProductToCart = () => {
+    const { products, cart, addProductCart, plusProductCart } = this.props;
+    const match = this.props.match.params.id;
+    const prepCart = cart.filter(idx => idx.id === match);
+
+    prepCart.length === 0 ? addProductCart(products[0]) : plusProductCart(match);
+  };
+
   render() {
     const { products, request } = this.props;
 
@@ -32,7 +40,7 @@ class Product extends React.Component {
               <div className='productPrice'>
                 {products[0].price}  £
               </div>
-              <div className='button'>
+              <div className='button' onClick={this.addProductToCart}>
                 Buy it!
               </div>
             </div>

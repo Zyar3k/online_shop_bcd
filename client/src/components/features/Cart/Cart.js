@@ -1,27 +1,22 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import './Cart.scss';
+import CartProduct from './CartProduct';
+import PendingInfo from '../../common/PendingInfo/PendingInfo';
 
 class Cart extends React.Component {
 
   render() {
 
+    const { cart } = this.props;
+
     return(
       <div>
         <div className='cartProduct'>
-          <h4>Cart Product</h4>
-          <div>
-            img
-          </div>
-          <div>
-            name
-          </div>
-          <div>
-            descr
-          </div>
-          <div>
-            price
-          </div>
+          
+        {cart.length !== 0 ? cart.map(idx =>
+          <CartProduct products={idx} />) : <PendingInfo />}
+
           <div>
             <button>+</button>
             <button>del</button>
@@ -36,6 +31,10 @@ class Cart extends React.Component {
       </div>
     );
   };
+};
+
+Cart.propTypes = {
+  cart: PropTypes.array.isRequired,
 };
 
 export default Cart;
