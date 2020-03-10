@@ -92,6 +92,8 @@ export default function reducer(statePart = initialState, action = {}) {
     /* product */
   	case LOAD_PRODUCTS:
       return  { ...statePart, data: action.payload };
+    case LOAD_PRODUCT:
+      return  { ...statePart, product: action.payload };
 
     /* request */
     case START_REQUEST:
