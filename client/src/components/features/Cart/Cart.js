@@ -1,5 +1,6 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
+import { Link } from 'react-router-dom';
 import './Cart.scss';
 import CartProduct from './CartProduct';
 import PendingInfo from '../../common/PendingInfo/PendingInfo';
@@ -49,8 +50,13 @@ class Cart extends React.Component {
         </div>
         <div>
           <h4>Summary</h4>
-        <div>Total Price: {price}  £</div>
-          <button>buy</button>
+          <div>Total Price: {price}£</div>
+          {cart.length !== 0 ? 
+          <Link to={'summarycart'}>
+            <button>buy</button>
+          </Link> :
+          <button color="info" disabled>buy</button> 
+          }
         </div>
       </div>
     );

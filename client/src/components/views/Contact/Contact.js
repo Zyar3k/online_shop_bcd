@@ -1,5 +1,8 @@
 import React from 'react';
 import './Contact.scss';
+import MainTitle from '../../common/MainTitle/MainTitle';
+
+
 
 class Contact extends React.Component {
 
@@ -7,8 +10,8 @@ class Contact extends React.Component {
 
     return(
       <div className='container'>
-        <div>
-          Contact
+        <div className="contactPage">
+          <MainTitle>Contact us</MainTitle>
         </div>
       </div>
     );

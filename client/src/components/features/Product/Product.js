@@ -41,9 +41,9 @@ class Product extends React.Component {
               <div className='productPrice'>
                 {products[0].price}  £
               </div>
-              <div className='button' onClick={this.addProductToCart}>
+              <button className='button' onClick={this.addProductToCart}>
                 Buy it!
-              </div>
+                </button>
             </div>
             
           </div>

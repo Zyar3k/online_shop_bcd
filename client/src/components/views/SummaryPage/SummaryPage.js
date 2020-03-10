@@ -1,4 +1,5 @@
 import React from 'react';
+import Summary from '../../features/Summary/SummaryContainer';
 
 class SummaryPage extends React.Component {
 
@@ -6,9 +7,7 @@ class SummaryPage extends React.Component {
 
     return(
       <div>
-        <h1>
-          SummaryPage
-        </h1>
+        <Summary />
       </div>
     );
   };
