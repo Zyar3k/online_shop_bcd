@@ -1,4 +1,4 @@
-
+Szybkość dodawania commitów spowodowana terminem. Przegapiłem go
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

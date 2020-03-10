@@ -17,8 +17,6 @@
     }
     .productPrice, .productTag .tag {
       color: white;
-      text-shadow: 0 0 6px $font-color,
-                 0 0 24px $font-color;
     }
   }
 }
@@ -40,8 +38,6 @@
     font-weight: bold;
     font-size: 20px;
     color: $background-color;
-    text-shadow: 0 0 6px $font-color,
-                 0 0 24px $font-color;    
   }
 }
 
@@ -58,4 +54,18 @@
 
 .productImg img {
   width: 100%;
+}
+
+@media (max-width: 768px) {
+
+  .productBox {
+    max-width: 45%;
+  }
+}
+
+@media (max-width: 767px) {
+
+  .productBox {
+    max-width: 100%;
+  }
 }
