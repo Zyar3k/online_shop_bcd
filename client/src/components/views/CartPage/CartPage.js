@@ -1,5 +1,6 @@
 import React from 'react';
 import './CartPage.scss';
+import Cart from '../../features/Cart/Cart';
 
 class CartPage extends React.Component {
 
@@ -7,9 +8,7 @@ class CartPage extends React.Component {
 
     return(
       <div className='container'>
-        <div>
-          CartPage
-        </div>
+        <Cart />
       </div>
     );
   };
