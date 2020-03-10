@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 const reducerName = 'products';
 const createActionName = name => `app/${reducerName}/${name}`;
 
@@ -22,6 +24,23 @@ export const loadProducts = payload => ({ payload, type: LOAD_PRODUCTS });
 
 /**********************************************************************/
 const initialState = [];
+
+
+/**********************************************************************/
+export const loadProductsRequest = () => {
+  return async dispatch => {
+
+    try {
+      await axios
+        .get('http://localhost:8000/api/products')
+        .then(res => {
+          dispatch(loadProducts(res.data));
+        });
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
+};
 
 
 

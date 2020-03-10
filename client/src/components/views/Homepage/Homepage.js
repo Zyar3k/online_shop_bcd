@@ -1,15 +1,15 @@
 import React from 'react';
 import './Homepage.scss';
 
+import Products from '../../features/Products/ProductsContainer';
+
 class Homepage extends React.Component {
 
   render(){
 
     return(
       <div>
-        <h1>
-          Homepage
-        </h1>
+        <Products />
       </div>
     );
   };
