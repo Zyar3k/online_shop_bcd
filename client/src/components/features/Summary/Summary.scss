@@ -5,15 +5,23 @@
 }
 
 .tableHead {
-  font-size: $base-size*2;
+  font-size: $base-size*2.5;
+  border-top-left-radius: $radius;
+  border-top-right-radius: $radius;
   padding: 10px 0;
   background: $font-color-hover;  
 }
 
 .tableBody {
   padding: 6px 0;
+  font-size: $base-size*1.6;
   border: 1px solid $font-color-hover;
   border-top: none;
+}
+
+.tableBody:last-child {
+  border-bottom-left-radius: $radius;
+  border-bottom-right-radius: $radius;
 }
 
 .tableHead, .tableBody {
@@ -41,7 +49,6 @@
   padding: 20px;
   width: 300px;
   float: right;
-  border: 1px solid $font-color-hover;
   text-align: center;
 
   .payOrderTitle {
@@ -49,19 +56,8 @@
   }
 
   .grandTotal {
+    margin-bottom: 20px;
     padding: 20px;
     font-size: $base-size*3;
-  }
-
-  .buttonOrder {
-    margin-top: 20px;
-    padding: 10px;
-    transition: $transition;
-    cursor: pointer;
-    background: $font-color-hover;
-    border-radius: $radius;
-    &:hover {
-      background: green;
-    }
   }
 }

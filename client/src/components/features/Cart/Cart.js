@@ -5,6 +5,8 @@ import './Cart.scss';
 import CartProduct from './CartProduct';
 import PendingInfo from '../../common/PendingInfo/PendingInfo';
 import MainTitle from '../../common/MainTitle/MainTitle';
+import ButtonNext from '../../common/ButtonNext/ButtonNext';
+import ButtonBack from '../../common/ButtonBack/ButtonBack';
 
 class Cart extends React.Component {
 
@@ -31,27 +33,37 @@ class Cart extends React.Component {
     const { cart, price } = this.props;
 
     return(
-      <div >
-        <MainTitle>Your cart</MainTitle>
+      <div className='cart'>
+          <ButtonBack className='back' />
+        <MainTitle>
+          Your cart</MainTitle>
         <span className='cart'>
           <div className='productCart'>
-              {cart.length !== 0 ? cart.map(idx =>
+            {cart.length !== 0 
+            ?
+            cart.map(idx =>
             <CartProduct
               key=''
               products={idx}
               deleteProduct={this.deleteProduct}
               plusProduct={this.plusProduct}
               removeProduct={this.removeProduct}
-            />) : <PendingInfo />}
+            />) 
+            : 
+            <PendingInfo />}
           </div>
           <div className='summaryWrapper'>
-            <h4>Summary</h4>
-            <div>Total Price: {price}£</div>
-          {cart.length !== 0 ?
+            <div className='totalPrice'>Total Price: {price}£</div>
+          {cart.length !== 0 
+            ?
             <Link to={'summarycart'}>
-              <div className='toSummary'>buy</div>
-            </Link> :
-            <div className='toSummary' color="info" disabled>Summary</div>}
+              <ButtonNext>
+                Summary
+              </ButtonNext>
+            </Link> 
+            :
+            <ButtonNext disabled>Summary</ButtonNext>
+            }
           </div>
         </span>
       </div>

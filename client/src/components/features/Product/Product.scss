@@ -1,10 +1,14 @@
 @import '../../../styles/settings.scss';
 
+.product {
+
+  background: $background-color-second;
+  border-radius: $radius;
+  padding: 10px 0;
+}
+
 .productWrapper {
   display: flex;
-  background: $background-color-second;
-  padding: 30px 0;
-  border-radius: $radius; 
 }
 
 .imgWrapper {
@@ -12,7 +16,7 @@
 
   text-align: center;
   img {
-    height: 590px;
+    height: 500px;
     max-width: 90%;
     transition: $transition;
     border-radius: $radius;
@@ -30,9 +34,15 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
 }
 .productDescription {
   text-align: justify;
+}
+
+.productPrice {
+  font-size: 28px;
+  font-weight: bold;
 }
 
 .productAction {
@@ -42,21 +52,8 @@
   font-size: 28px;
   align-items: center;
 
-  .productPrice {
-    font-size: 28px;
-    font-weight: bold;
-  }
-
-  .button {
-    padding: 20px;
-    border: 2px solid $font-color-hover;
-    background: $font-color-hover;
-    border-radius: $radius;
-    font-weight: bold;
-    cursor: pointer;
-    transition: $transition;
-    &:hover {
-      background: $background-color;
-    }
+  .btn {
+    margin: 0 10px;
+    justify-content: space-around;
   }
 }

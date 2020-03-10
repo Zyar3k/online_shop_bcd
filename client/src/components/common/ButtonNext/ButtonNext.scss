@@ -1,0 +1,15 @@
+@import '../../../styles/settings.scss';
+
+.buttonNext {
+  padding: 10px 20px;
+  font-size: $base-size*2;
+  background: $font-color-hover;
+  border: 2px solid $font-color-hover;
+  border-radius: $radius;
+  transition: $transition;
+  font-weight: bold;
+  cursor: pointer;
+  &:hover {
+    background: $background-color-second;
+  }
+} 

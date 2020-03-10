@@ -9,27 +9,29 @@
 body {
   margin: 0;
   padding: 0;
-  background: $background-color;
+  background-color: $background-color;
   color: $font-color;
   line-height: 1.5;
   letter-spacing: 2px;
   font-family: $font-text;
-}
 
-a, a:hover,  a:visited {
-  text-decoration: none;
-  color: $font-color;
-  transition: $transition;
-}
+  a, a:hover,  a:visited {
+    text-decoration: none;
+    color: $font-color;
+    transition: $transition;
+  }
+  
+  a:hover {
+    color: $font-color-hover;
+  }
+  
+  a.active {  
+    color: $font-color-hover;
+  }
+  
+  .container {
+    margin: 40px;
+  }
 
-a:hover {
-  color: $font-color-hover;
-}
 
-a.active {  
-  color: $font-color-hover;
-}
-
-.container {
-  margin: 40px;
 }

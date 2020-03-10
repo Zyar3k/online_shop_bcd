@@ -4,6 +4,7 @@ import { PropTypes } from 'prop-types';
 import Loader from '../../common/Loader/Loader';
 import MainTitle from '../../common/MainTitle/MainTitle';
 import './Summary.scss';
+import ButtonNext from '../../common/ButtonNext/ButtonNext';
 
 const Summary = (props) => {
 
@@ -19,7 +20,7 @@ const Summary = (props) => {
             <div className='price number'>price</div>
             <div className='quantity number'>quantity</div>
             <div className='number'>total</div>
-          </div>
+          </div>         
           {cart.map(idx =>
           <div className='tableBody' key='1'>            
             <div className='name'>{ idx.name }</div>
@@ -34,9 +35,11 @@ const Summary = (props) => {
             <div className='payOrderTitle'>grand total</div>
             <div className='grandTotal'> {price}£</div>         
           </div>
-          <Link to={'/'}>
-            <div className='buttonOrder'>order & pay</div>
-          </Link>
+            <Link to={'/'}>
+              <ButtonNext>
+                order & pay
+              </ButtonNext>
+            </Link>
         </div>
       </div>
     );

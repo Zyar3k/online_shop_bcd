@@ -5,6 +5,8 @@ import PendingInfo from '../../common/PendingInfo/PendingInfo';
 import Loader from '../../common/Loader/Loader';
 import './Product.scss';
 import MainTitle from '../../common/MainTitle/MainTitle';
+import ButtonNext from '../../common/ButtonNext/ButtonNext';
+import ButtonBack from '../../common/ButtonBack/ButtonBack';
 
 class Product extends React.Component {
 
@@ -27,25 +29,28 @@ class Product extends React.Component {
 
     if (request.success === true && request.pending === false && products.length > 0) {
       return (
-        <div className='productWrapper'>
-          <div className='imgWrapper'>
-            <img src={products[0].img} alt="img" />
-          </div>
-
-          <div className='productContent'>
-            <MainTitle>{products[0].name}</MainTitle>            
-            <div className='productDescription'>
-              {products[0].description}
+        <div className='product'>
+          <ButtonBack />
+          <div className='productWrapper'>
+            <div className='imgWrapper'>
+              <img src={products[0].img} alt="img" />
             </div>
-            <div className='productAction'>
+            <div className='productContent'>
+              <MainTitle>{products[0].name}</MainTitle>
               <div className='productPrice'>
-                {products[0].price}  £
+                {products[0].price} £
               </div>
-              <button className='button' onClick={this.addProductToCart}>
-                Add to cart
-              </button>
+              <div className='productDescription'>
+                {products[0].description}
+              </div>
+              <div className='productAction'>
+                <div className='btn'> 
+                </div>
+                <div className='btn' onClick={this.addProductToCart}>
+                  <ButtonNext>Add to cart</ButtonNext>
+                </div>
+              </div>
             </div>
-            
           </div>
         </div>
       );

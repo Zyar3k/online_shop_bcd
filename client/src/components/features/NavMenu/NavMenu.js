@@ -12,7 +12,7 @@ class NavMenu extends React.Component {
     return(
       <div className='navMenu'>
         <div className='logo'>
-          <NavLink className='navLink' exact to=''>
+          <NavLink className='navLink' exact to='/'>
             <Logo />
           </NavLink>
         </div>

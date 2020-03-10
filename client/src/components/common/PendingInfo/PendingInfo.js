@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-// to do!!
+// to do!! cart, products, product
 
 
 class PendingInfo extends React.Component {
