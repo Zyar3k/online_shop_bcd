@@ -10,13 +10,27 @@ class ProductBox extends React.Component {
     const { id, tag, img, name, price } = this.props;
 
     return(
-
-      <Link to={`product/${id}`}>
-        <div>{tag}</div>
-        <div>{name}</div>
-        <div>{price}</div>
-        <div><img src={img} alt='img' /></div>
-      </Link>
+      <div className='productBox'>
+        <Link to={`product/${id}`}>
+          <div className='productTitle'>
+            <div className='productTag'>
+              {tag}
+            </div>
+            <div className='productName'>
+              {name}
+            </div>
+          </div>
+          <div className='productImg'>
+            <img src={img} alt='img' />
+          </div>
+          <div className='productText'>
+          avalible from
+          </div>
+          <div className='productPrice'>
+            {price} £
+          </div>
+        </Link>
+      </div>
     );
   };
 };

@@ -1,1 +1,57 @@
-@import '../../../styles/settings.scss';
+@import '../../../styles/settings.scss';@import '../../../styles/settings.scss';
+
+.productBox {
+  margin: 20px;
+  max-width: 35%;
+  color: #929D9E;
+  text-align: center;
+  background: rgb(183, 193, 194);
+  border: 1px solid $font-color-hover;
+  border-top-right-radius: 40px;
+  border-top-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+  transition: ease .4s;
+  cursor: pointer;
+  &:hover{
+    box-shadow: 0 0 12px  rgba(0,0,0,0.2);
+    transform: scale(1.008);
+  }
+}
+
+.productTitle {
+  color: rgb(110, 117, 117);
+  text-transform: lowercase;
+}
+
+.productBox .productName{
+  margin: 8px 0;
+  font-size: 18px;
+  // padding: 8px 0;
+}
+
+.productBox .productTag {
+  min-height: 32px;
+  text-transform: uppercase;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-bottom: $background-color solid 1px;
+  letter-spacing: 5px;
+}
+
+.productBox .productText {
+  border-bottom: $background-color solid 1px;
+  color: rgb(110, 117, 117);
+}
+
+.productBox .productPrice {
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
+.productImg img {
+  width: 100%;
+}

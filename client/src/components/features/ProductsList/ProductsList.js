@@ -1,11 +1,16 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import ProductBox from '../ProductBox/ProductBox'
+import './ProductsList.scss'
+import MainTitle from '../../common/MainTitle/MainTitle';
 
 const ProductsList = ({ products }) => (
 
   <div>
-    {products.map(products => <ProductBox key={products.id}{...products} /> )}
+    <MainTitle>Our offer</MainTitle>
+    <div className='boxWrapper'>
+      {products.map(products => <ProductBox key={products.id}{...products} /> )}
+    </div>
   </div>
 );
 
