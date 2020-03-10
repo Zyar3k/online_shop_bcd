@@ -35,6 +35,7 @@ const ERROR_REQUEST = createActionName('ERROR_REQUEST');
 export const ADD_PRODUCT_CART = createActionName('ADD_PRODUCT_CART');
 export const PLUS_PRODUCT_CART = createActionName('PLUS_PRODUCT_CART');
 export const CALCULATE_PRICE = createActionName('CALCULATE_PRICE');
+export const DELETE_CART_PRODUCT = createActionName('DELETE_CART_PRODUCT');
 
 
 
@@ -52,6 +53,7 @@ export const errorRequest = error => ({ error, type: ERROR_REQUEST });
 export const addProductCart = payload => ({ payload, type: ADD_PRODUCT_CART });
 export const plusProductCart = id => ({id, type: PLUS_PRODUCT_CART});
 export const calculatePrice = () => ({ type: CALCULATE_PRICE });
+export const deleteCartProduct = payload => ({ payload, type: DELETE_CART_PRODUCT});
 
 
 
@@ -144,7 +146,11 @@ export default function reducer(statePart = initialState, action = {}) {
       } else {
         roundPrice = 0;
       }
-      return { ...statePart, price: roundPrice }
+      return { ...statePart, price: roundPrice };
+
+    case DELETE_CART_PRODUCT:
+      const deleteCartProduct = statePart.cart.filter(idx => idx.id !== action.payload);
+      return { ...statePart, cart: deleteCartProduct};
 
     default:
       return statePart;

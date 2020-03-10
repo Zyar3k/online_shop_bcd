@@ -7,6 +7,13 @@ import MainTitle from '../../common/MainTitle/MainTitle';
 
 class Cart extends React.Component {
 
+  deleteProduct = (id) => {
+    const {deleteProduct, calculatePrice} = this.props;
+    deleteProduct(id);
+    // calculatePrice();
+  };
+
+
   render() {
 
     const { cart, price } = this.props;
@@ -16,8 +23,12 @@ class Cart extends React.Component {
         <div>
           <MainTitle>Your cart</MainTitle>
             {cart.length !== 0 ? cart.map(idx =>
-          <CartProduct key='' products={idx} />) : <PendingInfo />}
+          <CartProduct 
 
+            key=''
+            products={idx}
+            deleteProduct={this.deleteProduct}
+          />) : <PendingInfo />}
           
         </div>
         <div>
@@ -32,6 +43,7 @@ class Cart extends React.Component {
 
 Cart.propTypes = {
   cart: PropTypes.array.isRequired,
+  deleteProduct: PropTypes.func.isRequired,
 };
 
 export default Cart;

@@ -4,6 +4,11 @@ import './ProductCartCounter.scss';
 
 class ProductCartCounter extends React.Component {
 
+  deleteProduct = () => {
+    const { products, deleteProduct } = this.props;
+    deleteProduct(products.id);
+  };
+
   render(){
 
     const { products } = this.props;
@@ -15,7 +20,7 @@ class ProductCartCounter extends React.Component {
           <button>+</button>
         </div>
 
-        <button>delete</button>
+        <button onClick={this.deleteProduct}>delete</button>
       </div>
     );
   };
@@ -23,6 +28,7 @@ class ProductCartCounter extends React.Component {
 
 ProductCartCounter.propTypes = {
   products: PropTypes.object.isRequired,
+  deleteProduct: PropTypes.func.isRequired,
 };
 
 export default ProductCartCounter;
