@@ -13,6 +13,20 @@ class Cart extends React.Component {
     calculatePrice();
   };
 
+  removeProduct = (products) => {
+    const { removeProduct, calculatePrice } = this.props;
+    products.quantity === 1 ? void(0) : removeProduct(products.id);
+    calculatePrice();
+  };
+
+  plusProduct = (id) => {
+    const { plusProduct, calculatePrice } = this.props;
+    plusProduct(id);
+    calculatePrice();
+  };
+
+  
+
 
   render() {
 
@@ -28,6 +42,8 @@ class Cart extends React.Component {
             key=''
             products={idx}
             deleteProduct={this.deleteProduct}
+            plusProduct={this.plusProduct}
+            removeProduct={this.removeProduct}
           />) : <PendingInfo />}
           
         </div>
@@ -44,6 +60,9 @@ class Cart extends React.Component {
 Cart.propTypes = {
   cart: PropTypes.array.isRequired,
   deleteProduct: PropTypes.func.isRequired,
+  plusProduct: PropTypes.func.isRequired,
+  removeProduct: PropTypes.func.isRequired,
+  calculatePrice: PropTypes.func.isRequired,
 };
 
 export default Cart;

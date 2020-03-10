@@ -36,6 +36,8 @@ export const ADD_PRODUCT_CART = createActionName('ADD_PRODUCT_CART');
 export const PLUS_PRODUCT_CART = createActionName('PLUS_PRODUCT_CART');
 export const CALCULATE_PRICE = createActionName('CALCULATE_PRICE');
 export const DELETE_CART_PRODUCT = createActionName('DELETE_CART_PRODUCT');
+export const PLUS_CART_PRODUCT = createActionName('PLUS_CART_PRODUCT');
+export const REMOVE_CART_PRODUCT = createActionName('REMOVE_CART_PRODUCT');
 
 
 
@@ -54,6 +56,8 @@ export const addProductCart = payload => ({ payload, type: ADD_PRODUCT_CART });
 export const plusProductCart = id => ({id, type: PLUS_PRODUCT_CART});
 export const calculatePrice = () => ({ type: CALCULATE_PRICE });
 export const deleteCartProduct = payload => ({ payload, type: DELETE_CART_PRODUCT});
+export const plusCartProduct = id => ({ id, type: PLUS_CART_PRODUCT});
+export const removeCartProduct = id => ({ id, type: REMOVE_CART_PRODUCT});
 
 
 
@@ -136,6 +140,22 @@ export default function reducer(statePart = initialState, action = {}) {
       const plusProdCart = statePart.cart.map(idx => idx.id === action.id ? prodCartAdd : idx);
       return { ...statePart, cart: plusProdCart};
 
+    case DELETE_CART_PRODUCT:
+      const deleteCartProduct = statePart.cart.filter(idx => idx.id !== action.payload);
+      return { ...statePart, cart: deleteCartProduct };
+
+    case PLUS_CART_PRODUCT:
+      const plusCartProd = statePart.cart.find(idx => idx.id === action.id);
+      plusCartProd.quantity += 1;
+      const plusCartCur = statePart.cart.map(idx => idx.id === action.id ? plusCartProd : idx);
+      return {...statePart, cart: plusCartCur }
+
+    case REMOVE_CART_PRODUCT:
+      const removeCartProd = statePart.cart.find(idx => idx.id === action.id);
+      removeCartProd.quantity -= 1;
+      const removeCartCur = statePart.cart.map(idx => idx.id === action.id ? removeCartProd : idx);
+      return { ...statePart, cart: removeCartCur}
+
 
     case CALCULATE_PRICE:
       let roundPrice;
@@ -147,10 +167,6 @@ export default function reducer(statePart = initialState, action = {}) {
         roundPrice = 0;
       }
       return { ...statePart, price: roundPrice };
-
-    case DELETE_CART_PRODUCT:
-      const deleteCartProduct = statePart.cart.filter(idx => idx.id !== action.payload);
-      return { ...statePart, cart: deleteCartProduct};
 
     default:
       return statePart;

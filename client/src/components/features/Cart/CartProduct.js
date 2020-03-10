@@ -6,7 +6,7 @@ import ProductCartCounter from '../../common/ProductCartCounter/ProductCartCount
 
 const CartProduct = (props) => {
 
-  const { products, deleteProduct } = props;
+  const { products, deleteProduct, plusProduct, removeProduct } = props;
 
   return(
     <div className='cartProduct'>
@@ -36,7 +36,9 @@ const CartProduct = (props) => {
       <div className='productCartCounter'>
         <ProductCartCounter 
           products={products} 
-          deleteProduct={deleteProduct} 
+          deleteProduct={deleteProduct}
+          plusProduct={plusProduct}
+          removeProduct={removeProduct}
         />
       </div>
     </div>
@@ -46,6 +48,8 @@ const CartProduct = (props) => {
 CartProduct.propTypes = {
   products: PropTypes.object.isRequired,
   deleteProduct: PropTypes.func.isRequired,
+  plusProduct: PropTypes.func.isRequired,
+  removeProduct: PropTypes.func.isRequired,
 };
 
 export default CartProduct;
