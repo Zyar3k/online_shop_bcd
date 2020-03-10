@@ -1,4 +1,5 @@
 import React from 'react';
+import Product from '../../features/Product/ProductContainer';
 
 class ProductExtension extends React.Component {
 
@@ -6,9 +7,7 @@ class ProductExtension extends React.Component {
 
     return(
       <div>
-        <h1>
-          ProductExtension
-        </h1>
+        <Product />
       </div>
     );
   };
