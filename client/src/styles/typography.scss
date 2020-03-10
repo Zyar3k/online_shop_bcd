@@ -1,2 +1,10 @@
 @import './settings.scss';
 @import url('https://fonts.googleapis.com/css?family=Raleway|Roboto+Slab&display=swap&subset=latin-ext');
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+body {
+  text-transform: lowercase;
+} 

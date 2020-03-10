@@ -1,56 +1,60 @@
-@import '../../../styles/settings.scss';@import '../../../styles/settings.scss';
+@import '../../../styles/settings.scss';
 
 .productBox {
-  margin: 20px;
-  max-width: 35%;
+  margin: 10px;
+  max-width: 28%;
   color: $background-color;
   text-align: center;
-  background: rgb(183, 193, 194);
-  border: 1px solid $font-color-hover;
-  border-top-right-radius: 40px;
-  border-top-left-radius: 40px;
-  border-bottom-right-radius: 40px;
-  border-bottom-left-radius: 40px;
-  transition: ease .4s;
+  background: $background-color-second;
+  border-radius: 10px;
+  transition: $transition;
   cursor: pointer;
-  &:hover{
+  &:hover {
     box-shadow: 0 0 12px  rgba(0,0,0,0.2);
-    transform: scale(1.008);
+    transform: scale(1.02);
+    .productName, .productText {
+      color: $font-color;
+    }
+    .productPrice, .productTag .tag {
+      color: white;
+      text-shadow: 0 0 6px $font-color,
+                 0 0 24px $font-color;
+    }
   }
 }
 
-.productTitle {
-  color: rgb(110, 117, 117);
-  text-transform: lowercase;
-}
-
-.productBox .productName{
-  margin: 8px 0;
-  font-size: 18px;
-  // padding: 8px 0;
+.productBox .productName {
+  min-height: 50px;
+  font-size: 16px;
+  align-items: center;
+  transition: $transition;
 }
 
 .productBox .productTag {
-  min-height: 32px;
+  min-height: 34px;
   text-transform: uppercase;
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
   border-bottom: $background-color solid 1px;
-  letter-spacing: 5px;
+  
+  .tag {
+    transition: $transition;
+    font-weight: bold;
+    font-size: 20px;
+    color: $background-color;
+    text-shadow: 0 0 6px $font-color,
+                 0 0 24px $font-color;    
+  }
 }
 
 .productBox .productText {
   border-bottom: $background-color solid 1px;
-  color: rgb(110, 117, 117);
 }
 
 .productBox .productPrice {
-  color: white;
+  transition: $transition;
+  color: $background-color;
   font-weight: bold;
   font-size: 22px;
 }
-
 
 .productImg img {
   width: 100%;

@@ -1,19 +1,18 @@
 @import '../../../styles/settings.scss';
 
 .tableSummary {
-  // background: grey;
-  font-size: $base-size*1.5
+  font-size: $base-size*1.5;
 }
 
 .tableHead {
   font-size: $base-size*2;
   padding: 10px 0;
-  background: rgb(183, 193, 194);
+  background: $font-color-hover;  
 }
 
 .tableBody {
   padding: 6px 0;
-  border: 1px solid rgb(183, 193, 194);
+  border: 1px solid $font-color-hover;
   border-top: none;
 }
 
@@ -34,7 +33,7 @@
 
   .totalPrice {
     font-weight: bold;
-  }  
+  }
 }
 
 .payOrderWrapper {
@@ -42,11 +41,10 @@
   padding: 20px;
   width: 300px;
   float: right;
-  border: 1px solid rgb(183, 193, 194);
+  border: 1px solid $font-color-hover;
   text-align: center;
 
   .payOrderTitle {
-    // background: grey;
     font-size: $base-size*1.6;
   }
 
@@ -58,9 +56,10 @@
   .buttonOrder {
     margin-top: 20px;
     padding: 10px;
-    transition: ease 0.5s;
+    transition: $transition;
     cursor: pointer;
-    background: rgb(183, 193, 194);
+    background: $font-color-hover;
+    border-radius: $radius;
     &:hover {
       background: green;
     }

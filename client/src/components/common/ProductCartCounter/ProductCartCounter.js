@@ -26,7 +26,9 @@ class ProductCartCounter extends React.Component {
       <div className='productCartCounter'>
         <div className='btnQuantity'>
           <button className='btnMinus' onClick={this.removeProduct}>-</button>
-            <div className='quantityProduct'>{products.quantity}</div>
+            <div className='quantityProduct'>
+              {products.quantity}
+            </div>
           <button className='btnPlus' onClick={this.plusProduct}>+</button>
         </div>
 

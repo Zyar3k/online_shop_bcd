@@ -1,11 +1,15 @@
 /* colors */
-$background-color: #929D9E;//#d1d1d1;
-$font-color:rgb(22, 22, 22);//#fff;
+$background-color: #929D9E;
+$background-color-second: #9fa9aa;
+$font-color:rgb(25, 25, 25);
 $font-color-hover: #d1d1d1;
 
 /* fonts */
-$font-header: 'Raleway', sans-serif;
 $font-text: 'Roboto Slab', serif;
+$font-text: 'Raleway', sans-serif;
+$font-header: 'Raleway', sans-serif;
 
 /* others */
 $base-size: 12px;
+$transition: ease 0.7s;
+$radius: 10px;

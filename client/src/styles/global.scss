@@ -1,4 +1,5 @@
 @import './settings.scss';
+@import './typography.scss';
 @import './normalize.scss';
 
 *, *::before, *::after {
@@ -18,11 +19,16 @@ body {
 a, a:hover,  a:visited {
   text-decoration: none;
   color: $font-color;
-  transition: ease 0.5s;
+  transition: $transition;
 }
-// a:hover {  
-//   color: $font-color-hover;
-// }
+
+a:hover {
+  color: $font-color-hover;
+}
+
+a.active {  
+  color: $font-color-hover;
+}
 
 .container {
   margin: 40px;

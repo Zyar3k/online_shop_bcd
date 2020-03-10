@@ -2,9 +2,9 @@
 
 .productWrapper {
   display: flex;
-  background: rgb(183, 193, 194);
+  background: $background-color-second;
   padding: 30px 0;
-  border-radius: 20px; 
+  border-radius: $radius; 
 }
 
 .imgWrapper {
@@ -14,9 +14,8 @@
   img {
     height: 590px;
     max-width: 90%;
-    transition: ease .4s;
-    border-radius: 20px;
-    border: 1px solid $font-color-hover;
+    transition: $transition;
+    border-radius: $radius;
     &:hover {
       transform: scale(1.3);
       border-radius: 0;
@@ -51,11 +50,11 @@
   .button {
     padding: 20px;
     border: 2px solid $font-color-hover;
-    background: $font-color-hover;//inherit;
-    border-radius: 8px;
+    background: $font-color-hover;
+    border-radius: $radius;
     font-weight: bold;
     cursor: pointer;
-    transition: ease .4s;
+    transition: $transition;
     &:hover {
       background: $background-color;
     }

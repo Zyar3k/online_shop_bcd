@@ -12,11 +12,11 @@ function App() {
   return (
     <MainLayout>
       <Switch>
-        <Route path='/' exact component={Homepage} />
-        <Route path='/product/:id' exact component={ProductExtension} />
-        <Route path='/contact' exact component={Contact} />
-        <Route path='/cart' exact component={CartPage} />
-        <Route path='/summarycart' exact component={SummaryPage} />
+        <Route exact path='/' component={Homepage} />
+        <Route path='/product/:id' component={ProductExtension} />
+        <Route path='/contact' component={Contact} />
+        <Route path='/cart' component={CartPage} />
+        <Route path='/summarycart' component={SummaryPage} />
         <Route component={NotFound} />
       </Switch>
     </MainLayout>

@@ -14,7 +14,7 @@ class ProductBox extends React.Component {
         <Link to={`product/${id}`}>
           <div className='productTitle'>
             <div className='productTag'>
-              {tag}
+              <span className='tag'>{tag}</span>
             </div>
             <div className='productName'>
               {name}

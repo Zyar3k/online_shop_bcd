@@ -26,38 +26,34 @@ class Cart extends React.Component {
     calculatePrice();
   };
 
-  
-
-
   render() {
 
     const { cart, price } = this.props;
 
     return(
-      <div>
-        <div>
-          <MainTitle>cart</MainTitle>
-            {cart.length !== 0 ? cart.map(idx =>
-          <CartProduct 
-
-            key=''
-            products={idx}
-            deleteProduct={this.deleteProduct}
-            plusProduct={this.plusProduct}
-            removeProduct={this.removeProduct}
-          />) : <PendingInfo />}
-          
-        </div>
-        <div>
-          <h4>Summary</h4>
-          <div>Total Price: {price}£</div>
-          {cart.length !== 0 ? 
-          <Link to={'summarycart'}>
-            <button>buy</button>
-          </Link> :
-          <button color="info" disabled>buy</button> 
-          }
-        </div>
+      <div >
+        <MainTitle>Your cart</MainTitle>
+        <span className='cart'>
+          <div className='productCart'>
+              {cart.length !== 0 ? cart.map(idx =>
+            <CartProduct
+              key=''
+              products={idx}
+              deleteProduct={this.deleteProduct}
+              plusProduct={this.plusProduct}
+              removeProduct={this.removeProduct}
+            />) : <PendingInfo />}
+          </div>
+          <div className='summaryWrapper'>
+            <h4>Summary</h4>
+            <div>Total Price: {price}£</div>
+          {cart.length !== 0 ?
+            <Link to={'summarycart'}>
+              <button>buy</button>
+            </Link> :
+            <div className='toSummary' color="info" disabled>Summary</div>}
+          </div>
+        </span>
       </div>
     );
   };

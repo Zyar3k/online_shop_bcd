@@ -3,15 +3,13 @@
 .navMenu {
   display: flex;
   justify-content: space-between;
-  font-family: $font-text;
+  align-items: center;
+  font-family: $font-header;
   font-size: 40px;
   text-transform: lowercase;
 }
 
-.link {
+.navLink {
   margin: 10px;
-  padding: 20px;
-  &:hover {  
-    color: $font-color-hover;
-  }
+  padding: 20px 10px;
 }
