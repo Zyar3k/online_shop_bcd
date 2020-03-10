@@ -8,7 +8,7 @@ class Homepage extends React.Component {
   render(){
 
     return(
-      <div>
+      <div className='container'>
         <Products />
       </div>
     );

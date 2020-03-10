@@ -1,0 +1,14 @@
+@import '../../../styles/settings.scss';
+
+.navMenu {
+  display: flex;
+  justify-content: space-between;
+  font-family: $font-text;
+  font-size: 30px;
+  text-transform: lowercase;
+}
+
+.link {
+  margin: 10px;
+  padding: 20px;
+}

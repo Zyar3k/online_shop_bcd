@@ -6,10 +6,10 @@ class CartPage extends React.Component {
   render(){
 
     return(
-      <div>
-        <h1>
+      <div className='container'>
+        <div>
           CartPage
-        </h1>
+        </div>
       </div>
     );
   };

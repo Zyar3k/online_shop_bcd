@@ -1,6 +1,7 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import './Header.scss';
+
+import NavMenu from '../../features/NavMenu/NavMenu';
 
 class Header extends React.Component {
 
@@ -8,10 +9,7 @@ class Header extends React.Component {
 
     return(
       <div className='header'>
-        <NavLink to='/'>Logo</NavLink>
-        <NavLink to='/'>Home</NavLink>
-        <NavLink to='/contact'>Contact</NavLink>
-        <NavLink to='/cart'>Cart</NavLink>
+        <NavMenu />
       </div>
     );
   };

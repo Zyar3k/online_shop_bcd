@@ -15,8 +15,17 @@ body {
   font-family: $font-text;
 }
 
-a, a:hover, a:visited {
+a, a:visited {
   text-decoration: none; 
+}
+
+a:hover {  
+  color: $font-color-hover;
+}
+
+.container {
+  margin: 40px;
+  background: grey;
 }
 
 //prod
