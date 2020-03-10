@@ -9,6 +9,10 @@
   text-transform: lowercase;
 }
 
+.burger {
+  display: none;
+}
+
 .navLink {
   margin: 10px;
   padding: 20px 10px;
@@ -18,5 +22,23 @@
   .navLink {
     margin: 4px;
     padding: 16px 4px;
+  }
+}
+
+@media (max-width: 767px) {
+
+  .navMenu {
+    max-height: 136px;
+  }
+  
+  .navLink {
+    display: none;
+  }  
+
+  .burger {
+    display: flex;
+    position: absolute;
+    top: 50px;
+    right: 40px;
   }
 }

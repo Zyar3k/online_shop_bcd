@@ -6,3 +6,14 @@
     height: 140px;
   }
 }
+
+@media (max-width: 767px) {
+
+  .logo {
+
+    img {
+      padding: 0 0 0 30px;
+      height: 120px;
+    }
+  }
+}
