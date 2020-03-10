@@ -1,7 +1,7 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import './Cart.scss';
-import MainTitle from '../../common/MainTitle/MainTitle';
+
 
 const CartProduct = (props) => {
 
@@ -9,7 +9,7 @@ const CartProduct = (props) => {
 
   return(
     <div className='cartProduct'>
-      <MainTitle>Cart Product</MainTitle>
+
       <div className='cartProdContent'>
 
         <div className='cartProdImg'>
@@ -18,14 +18,14 @@ const CartProduct = (props) => {
 
         <div className='cartProdText'>
           <div>
-          name{products.name}
+          {products.name}
           </div>
           <div>
             descr
           </div>
         </div>
         <div className='cartProdPrice'>
-          price{products.price}
+          {products.price}  £
         </div>
       </div>
     </div>

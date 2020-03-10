@@ -14,11 +14,12 @@ class Product extends React.Component {
   };
 
   addProductToCart = () => {
-    const { products, cart, addProductCart, plusProductCart } = this.props;
+    const { products, cart, addProductCart, plusProductCart, calculatePrice } = this.props;
     const match = this.props.match.params.id;
     const prepCart = cart.filter(idx => idx.id === match);
 
     prepCart.length === 0 ? addProductCart(products[0]) : plusProductCart(match);
+    calculatePrice();
   };
 
   render() {

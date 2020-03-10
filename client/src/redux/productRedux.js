@@ -18,6 +18,7 @@ export const getRequest = ({ products }) => products.request;
 
 /* cart */
 export const getCart = ({ products }) => products.cart;
+export const getPrice = ({ products }) => products.price;
 
 
 /**********************************************************************/
@@ -33,6 +34,7 @@ const ERROR_REQUEST = createActionName('ERROR_REQUEST');
 /* cart */
 export const ADD_PRODUCT_CART = createActionName('ADD_PRODUCT_CART');
 export const PLUS_PRODUCT_CART = createActionName('PLUS_PRODUCT_CART');
+export const CALCULATE_PRICE = createActionName('CALCULATE_PRICE');
 
 
 
@@ -48,7 +50,8 @@ export const errorRequest = error => ({ error, type: ERROR_REQUEST });
 
 /* cart */
 export const addProductCart = payload => ({ payload, type: ADD_PRODUCT_CART });
-export const plusProductCart = id => ({id, type: PLUS_PRODUCT_CART})
+export const plusProductCart = id => ({id, type: PLUS_PRODUCT_CART});
+export const calculatePrice = () => ({ type: CALCULATE_PRICE });
 
 
 
@@ -62,6 +65,7 @@ const initialState = {
   },
   product: [],
   cart: [],
+  price: 0,
 };
 
 
@@ -126,9 +130,21 @@ export default function reducer(statePart = initialState, action = {}) {
       };
     case PLUS_PRODUCT_CART:
       const prodCartAdd = statePart.cart.find(idx => idx.id === action.id);
-      prodCartAdd.quantity +=1;
+      prodCartAdd.quantity += 1;
       const plusProdCart = statePart.cart.map(idx => idx.id === action.id ? prodCartAdd : idx);
       return { ...statePart, cart: plusProdCart};
+
+
+    case CALCULATE_PRICE:
+      let roundPrice;
+      if (statePart.cart.length !== 0) {
+        const fullPrice = statePart.cart.map(idx => idx.price * idx.quantity);
+        const sumPrice = fullPrice.reduce((prev, curr) => prev + curr);
+        roundPrice = parseFloat(sumPrice.toFixed(2));
+      } else {
+        roundPrice = 0;
+      }
+      return { ...statePart, price: roundPrice }
 
     default:
       return statePart;

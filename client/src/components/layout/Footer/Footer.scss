@@ -1,0 +1,13 @@
+@import '../../../styles/settings.scss';
+
+.footer {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  margin: 0 auto;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: $background-color;
+  color: white;
+}
