@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const config = require('./config');
 
 const app = express();
 
@@ -12,7 +13,7 @@ app.get('/api/products', (req, res) => {
   res.json(console.log('=> api products'));
 });
 
-app.listen(8000, function () {
-  console.log(`Server is running on port: `, 8000);
+app.listen(config.port, function () {
+  console.log(`Server is running on port: `, config.port);
   console.log(`Happy coding`);
 });
