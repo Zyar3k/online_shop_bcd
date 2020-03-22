@@ -24,7 +24,7 @@ class ProductBox extends React.Component {
             <img src={img} alt='img' />
           </div>
           <div className='productText'>
-          avalible from
+          available from
           </div>
           <div className='productPrice'>
             {price} £

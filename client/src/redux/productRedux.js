@@ -1,5 +1,6 @@
 import axios from 'axios';
-import {API_URL} from '../config';
+import { API_URL } from '../config';
+import { BASE_URL } from '../config';
 
 const reducerName = 'products';
 const createActionName = name => `app/${reducerName}/${name}`;
@@ -81,7 +82,7 @@ export const loadProductsRequest = () => {
 
     dispatch(startRequest());
     try {      
-      let res = await axios.get(`${API_URL}/products`);
+      let res = await axios.get(`${BASE_URL}${API_URL}/products`);
       // await new Promise((res, rej) => setTimeout(res, 2000)); // turn on after work
       dispatch(loadProducts(res.data));
       dispatch(endRequest());
@@ -98,7 +99,7 @@ export const loadProductRequest = (id) => {
 
     dispatch(startRequest());
     try {
-      let res = await axios.get(`${API_URL}/product/${id}`);
+      let res = await axios.get(`${BASE_URL}${API_URL}/product/${id}`);
       await new Promise((res, rej) => setTimeout(res, 1000));
       dispatch(loadProduct(res.data));
       dispatch(endRequest());
