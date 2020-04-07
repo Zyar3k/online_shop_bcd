@@ -100,7 +100,7 @@ export const loadProductRequest = (id) => {
     dispatch(startRequest());
     try {
       let res = await axios.get(`${BASE_URL}${API_URL}/product/${id}`);
-      await new Promise((res, rej) => setTimeout(res, 1000));
+      // await new Promise((res, rej) => setTimeout(res, 1000));
       dispatch(loadProduct(res.data));
       dispatch(endRequest());
     } catch(error) {
