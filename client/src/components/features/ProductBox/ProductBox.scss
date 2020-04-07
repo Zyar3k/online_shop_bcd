@@ -15,8 +15,22 @@
     .productName, .productText {
       color: $font-color;
     }
-    .productPrice, .productTag .tag {
+     .productTag .tag {
       color: white;
+      letter-spacing: 10px;
+    }
+    .productPrice {
+      padding: 18px 0;
+      color: green;
+      font-size: 26px;
+      font-weight: 900;
+      text-shadow: 0 0 4px white,
+      0 0 8px white,
+      0 0 16px white,
+      0 0 30px white,
+      0 0 40px white,
+      0 0 50px white,
+      0 0 700px white;
     }
   }
 }
@@ -38,6 +52,8 @@
     font-weight: bold;
     font-size: 20px;
     color: $background-color;
+    color: whitesmoke;
+    letter-spacing: 2px;
   }
 }
 
@@ -48,8 +64,10 @@
 .productBox .productPrice {
   transition: $transition;
   color: $background-color;
-  font-weight: bold;
+  color: white;
+  font-weight: 600;
   font-size: 22px;
+  padding: 8px 0;
 }
 
 .productImg img {
