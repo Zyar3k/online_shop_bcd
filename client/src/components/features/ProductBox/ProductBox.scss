@@ -15,7 +15,7 @@
     .productName, .productText {
       color: $font-color;
     }
-     .productTag .tag {
+    .productTag .tag {
       color: white;
       letter-spacing: 10px;
     }
@@ -25,12 +25,12 @@
       font-size: 26px;
       font-weight: 900;
       text-shadow: 0 0 4px white,
-      0 0 8px white,
-      0 0 16px white,
-      0 0 30px white,
-      0 0 40px white,
-      0 0 50px white,
-      0 0 700px white;
+                  0 0 8px white,
+                  0 0 16px white,
+                  0 0 30px white,
+                  0 0 40px white,
+                  0 0 50px white,
+                  0 0 700px white;
     }
   }
 }

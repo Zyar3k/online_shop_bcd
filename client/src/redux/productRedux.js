@@ -17,6 +17,16 @@ export const getAmountOfProducts = ({ products }) => products.data.length;
 /* request */
 export const getRequest = ({ products }) => products.request;
 
+/* product sort */
+export const getProductsSort = ({ products }) => {
+  const sortProducts = [...products.data].sort((a, b) => {
+       if (a[products.key] > b[products.key]) return products.direction === 'asc' ? 1 : -1;
+       if (a[products.key] < b[products.key]) return products.direction === 'asc' ? -1 : 1;
+       return 0;
+  });
+  return sortProducts;
+};
+
 /* cart */
 export const getCart = ({ products }) => products.cart;
 export const getPrice = ({ products }) => products.price;
@@ -31,6 +41,9 @@ export const LOAD_PRODUCT = createActionName('LOAD_PRODUCT');
 const START_REQUEST = createActionName('START_REQUEST');
 const END_REQUEST = createActionName('END_REQUEST');
 const ERROR_REQUEST = createActionName('ERROR_REQUEST');
+
+/* product sort */
+export const SORT_OPTIONS = createActionName('SORT_OPTIONS');
 
 /* cart */
 export const ADD_PRODUCT_CART = createActionName('ADD_PRODUCT_CART');
@@ -51,6 +64,9 @@ export const loadProduct = payload => ({ payload, type: LOAD_PRODUCT });
 export const startRequest = () => ({ type: START_REQUEST });
 export const endRequest = () => ({ type: END_REQUEST });
 export const errorRequest = error => ({ error, type: ERROR_REQUEST });
+
+/* product sort */
+export const sortOptions = payload => ({ payload, type: SORT_OPTIONS });
 
 /* cart */
 export const addProductCart = payload => ({ payload, type: ADD_PRODUCT_CART });
@@ -73,6 +89,8 @@ const initialState = {
   product: [],
   cart: [],
   price: 0,
+  key: '',
+  direction: '',
 };
 
 
@@ -127,6 +145,13 @@ export default function reducer(statePart = initialState, action = {}) {
       return { ...statePart, request: { pending: false, error: null, success: true } };
     case ERROR_REQUEST:
       return { ...statePart, request: { pending: false, error: action.error, success: false } };
+
+    /* product sort */
+    case SORT_OPTIONS:
+      return {...statePart,  
+        key: action.payload.key, 
+        direction: action.payload.direction,
+      };
 
     /* cart */
     case ADD_PRODUCT_CART:

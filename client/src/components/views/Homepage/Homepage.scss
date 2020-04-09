@@ -1,1 +1,22 @@
 @import '../../../styles/settings.scss';
+
+.homeCont {
+  display: flex;
+  flex-direction: column;
+
+  .barCont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+@media(max-width: 500px) {
+  .homeCont{
+    .barCont{
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+}
+

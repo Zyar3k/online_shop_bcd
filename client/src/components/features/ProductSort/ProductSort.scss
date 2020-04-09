@@ -1,0 +1,19 @@
+@import '../../../styles/settings.scss';
+
+.sortCont {
+  display: flex;
+}
+
+.sortText {
+  padding: 0 10px;
+}
+
+.sortIcon {
+  padding: 0 4px;
+  margin: auto auto;
+  cursor: pointer;
+  transition: ease 0.4s;
+  &:hover {
+    color: $font-color-hover;
+  }
+}
