@@ -1,6 +1,6 @@
 # Betty Craft Designs - online-shop
 
-[LIVE DEMO](https://online-shop-bcd.herokuapp.com/#/)
+### [LIVE DEMO](https://online-shop-bcd.herokuapp.com/#/)
 
 > Online store created from scratch. Application server and client. The ability to add products to your cart
 ## Frontend
